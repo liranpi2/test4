@@ -58,3 +58,59 @@ jobs:
           git commit -m "add submodule Snaffler"
           git push
         continue-on-error: true
+        
+      - uses: actions/checkout@v2
+        with:
+          repository: bitsadmin/wesng
+          path: wesng
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/bitsadmin/wesng.git
+          git add .
+          git commit -m "add submodule wesng"
+          git push
+        continue-on-error: true
+
+      - uses: actions/checkout@v2
+        with:
+          repository: wagga40/Zircolite
+          path: Zircolite
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/wagga40/Zircolite.git
+          git add .
+          git commit -m "add submodule Zircolite"
+          git push
+        continue-on-error: true
+      
+      - uses: actions/checkout@v2
+        with:
+          repository: VirusTotal/yara
+          path: yara
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/VirusTotal/yara.git
+          git add .
+          git commit -m "add submodule yara"
+          git push
+        continue-on-error: true
+        
+      - uses: actions/checkout@v2
+        with:
+          repository: 0x6d69636b/windows_hardening
+          path: windows_hardening
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/0x6d69636b/windows_hardening.git
+          git add .
+          git commit -m "add submodule windows_hardening"
+          git push
+        continue-on-error: true
