@@ -10,3 +10,6 @@
 [submodule "wesng"]
 	path = wesng
 	url = https://github.com/bitsadmin/wesng.git
+[submodule "Zircolite"]
+	path = Zircolite
+	url = https://github.com/wagga40/Zircolite.git
