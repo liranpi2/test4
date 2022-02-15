@@ -19,3 +19,6 @@
 [submodule "windows_hardening"]
 	path = windows_hardening
 	url = https://github.com/0x6d69636b/windows_hardening.git
+[submodule "limiter"]
+	path = limiter
+	url = https://github.com/liranpi2/limiter.git
