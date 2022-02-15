@@ -7,6 +7,9 @@ on:
             required: true
             default: 'warning'
           tags:
+            description: 'build scenario tag'  
+            
+permissions: write-all
   
 jobs:
   update:
