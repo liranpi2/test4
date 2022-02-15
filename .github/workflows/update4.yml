@@ -17,8 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2 
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+
+      - name: Commit & push changes
       - run: |
           git config user.name liranpi2
-          git submodule foreach git pull origin master
           git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
