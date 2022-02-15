@@ -16,3 +16,6 @@
 [submodule "yara"]
 	path = yara
 	url = https://github.com/VirusTotal/yara.git
+[submodule "windows_hardening"]
+	path = windows_hardening
+	url = https://github.com/0x6d69636b/windows_hardening.git
