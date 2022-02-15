@@ -7,3 +7,6 @@
 [submodule "Snaffler"]
 	path = Snaffler
 	url = https://github.com/SnaffCon/Snaffler.git
+[submodule "wesng"]
+	path = wesng
+	url = https://github.com/bitsadmin/wesng.git
