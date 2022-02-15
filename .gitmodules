@@ -13,3 +13,6 @@
 [submodule "Zircolite"]
 	path = Zircolite
 	url = https://github.com/wagga40/Zircolite.git
+[submodule "yara"]
+	path = yara
+	url = https://github.com/VirusTotal/yara.git
