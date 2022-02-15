@@ -1,4 +1,4 @@
-name: clone repositories
+name: clone submodules
 
 on:
   workflow_dispatch:
@@ -112,5 +112,19 @@ jobs:
           git submodule add https://github.com/0x6d69636b/windows_hardening.git
           git add .
           git commit -m "add submodule windows_hardening"
+          git push
+        continue-on-error: true
+
+      - uses: actions/checkout@v2
+        with:
+          repository: liranpi2/limiter
+          path: limiter
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/liranpi2/limiter.git
+          git add .
+          git commit -m "add submodule limiter"
           git push
         continue-on-error: true
