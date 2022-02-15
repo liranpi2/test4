@@ -29,7 +29,8 @@ jobs:
           git add .
           git commit -m "add submodule DSInternals"
           git push
-          
+        continue-on-error: true 
+       
       - uses: actions/checkout@v2
         with:
           repository: sqlmapproject/sqlmap
@@ -42,3 +43,4 @@ jobs:
           git add .
           git commit -m "add submodule sqlmap"
           git push
+        continue-on-error: true 
