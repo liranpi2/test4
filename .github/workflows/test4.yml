@@ -1,0 +1,44 @@
+name: clone repositories
+
+on:
+  workflow_dispatch:
+    inputs:
+          logLevel:
+            description: 'Log level'     
+            required: true
+            default: 'warning'
+          tags:
+            description: 'build scenario tag'  
+            
+permissions: write-all
+
+jobs:
+  clone-submodules:
+    runs-on: ubuntu-latest
+   
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: MichaelGrafnetter/DSInternals
+          path: DSInternals
+      - uses: actions/checkout@v2
+      - run: |
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/MichaelGrafnetter/DSInternals.git DSInternals
+          git add .
+          git commit -m "add submodule DSInternals
+          git push
+          
+      - uses: actions/checkout@v2
+        with:
+          repository: sqlmapproject/sqlmap
+          path: sqlmap
+      - uses: actions/checkout@v2
+      - run: | 
+          git config user.name liranpi2
+          git pull --recurse-submodules
+          git submodule add https://github.com/sqlmapproject/sqlmap.git sqlmap
+          git add .
+          git commit -m "add submodule sqlmap"
+          git push
